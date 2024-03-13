@@ -31,6 +31,7 @@
     })
     discord
     zsh-powerlevel10k
+    gh
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -53,8 +54,6 @@
     # ".screenrc".source = dotfiles/screenrc;
     ".zshrc".source = .dotfiles/zshrc;
     ".p10k.zsh".source = .dotfiles/p10k.zsh;
-
-    ".cache/p10k-instant-prompt-roc.zsh".source = .dotfiles/cache/p10k-instant-prompt-roc.zsh;
 
     ".config/wezterm/wezterm.lua".source = .dotfiles/config/wezterm/wezterm.lua;
 
