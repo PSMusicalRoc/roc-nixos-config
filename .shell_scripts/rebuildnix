@@ -1,1 +1,28 @@
-sudo nixos-rebuild switch --flake /home/roc/.roc_nixos
+NUMCOLS=$(tput cols)
+NUMSPACES=$(( (NUMCOLS - 8) / 2 ))
+
+pushd /home/roc/.roc_nixos/
+echo -e -n "\033[42;30m"
+for i in $(seq $NUMSPACES); do
+  echo -e -n " "
+done
+echo -e -n "GIT DIFF"
+for i in $(seq $NUMSPACES); do
+  echo -e -n " "
+done
+echo -e "\033[0m"
+git diff
+
+echo
+echo -e -n "\033[44m"
+for i in $(seq $NUMSPACES); do
+  echo -e -n " "
+done
+echo -e -n "NIXBUILD"
+for i in $(seq $NUMSPACES); do
+  echo -e -n " "
+done
+echo -e "\033[0m"
+
+sudo nixos-rebuild switch --flake /home/roc/.roc_nixos && git commit -a -m "Commit $(date)"
+popd
