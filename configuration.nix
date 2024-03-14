@@ -67,6 +67,11 @@
     pulse.enable = true;
   };
 
+  # Tailscale (personal VPN)
+  services.tailscale = {
+    enable = true;
+  };
+
   # Fonts
 
   fonts.packages = with pkgs; [
