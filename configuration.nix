@@ -9,6 +9,7 @@
       ./hardware-configuration.nix
       ./programs/firefox.nix
       ./programs/chromium.nix
+      ./programs/nextcloud.nix
       ./zsh.nix
     ];
 
