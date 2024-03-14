@@ -4,7 +4,7 @@
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud28;
-    hostName = "roc-server";
+    hostName = "roc-nixos.tail9d155.ts.net";
     config = {
       adminpassFile = "/etc/nextcloud-admin-pass";
       adminuser = "roc";
