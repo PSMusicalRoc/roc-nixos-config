@@ -32,11 +32,6 @@
   services.xserver = {
     enable = true;
 
-    # Setup KDE Settings (for now, KDE 5)
-    desktopManager.plasma6 = {
-      enable = true;
-    };
-
     # Configure SDDM, including using wayland
     displayManager.sddm = {
       enable = true;
@@ -44,6 +39,11 @@
       enableHidpi = true;
       autoNumlock = true;
     };
+  };
+
+  # Setup Plasma 6 Settings
+  services.desktopManager.plasma6 = {
+    enable = true;
   };
 
   # Default Keyboard Configuration
