@@ -111,6 +111,7 @@
     git
     efibootmgr
     refind
+    kdePackages.kdeconnect-kde
     
     # Custom Shell Commands
     (import ./.shell_scripts { inherit pkgs; })
