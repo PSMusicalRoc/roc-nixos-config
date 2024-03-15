@@ -29,7 +29,7 @@
         jnoortheen.nix-ide
       ];
     })
-    discord
+    discord-screenaudio
     zsh-powerlevel10k
     gh
     keepass
