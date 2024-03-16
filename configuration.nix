@@ -118,6 +118,7 @@
     efibootmgr
     refind
     kdePackages.kdeconnect-kde
+    kdePackages.partitionmanager
     
     # Custom Shell Commands
     (import ./.shell_scripts { inherit pkgs; })
