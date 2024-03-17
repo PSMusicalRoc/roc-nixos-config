@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "roc";
@@ -14,6 +15,13 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
+
+  # Git Configuration
+  programs.git = {
+    enable = true;
+    userName = "DumbAsARoc";
+    userEmail = "timbishop514@gmail.com";
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -38,6 +46,14 @@
         nestopia
       ];
     })
+    (wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [
+        obs-tuna
+        obs-pipewire-audio-capture
+      ];
+    })
+    davinci-resolve
+
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
