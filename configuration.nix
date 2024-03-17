@@ -22,9 +22,15 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
   networking.hostName = "roc-nixos"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  # HIP Workaround
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -34,13 +40,14 @@
 
   hardware.opengl = {
     extraPackages = with pkgs; [
-      rocmPackages.rpp-opencl
+      rocmPackages.clr.icd
     ];
   };
 
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
+    videoDrivers = [ "amdgpu" ];
 
     # Configure SDDM, including using wayland
     displayManager.sddm = {
