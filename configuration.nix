@@ -32,6 +32,12 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
+  hardware.opengl = {
+    extraPackages = with pkgs; [
+      rocmPackages.rpp-opencl
+    ];
+  };
+
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
