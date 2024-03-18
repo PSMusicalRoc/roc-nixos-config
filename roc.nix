@@ -52,7 +52,7 @@
         obs-pipewire-audio-capture
       ];
     })
-    davinci-resolve
+    # davinci-resolve
 
 
     # # You can also create simple shell scripts directly inside your
