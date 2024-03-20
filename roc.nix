@@ -53,6 +53,7 @@
       ];
     })
     # davinci-resolve
+    prismlauncher
 
 
     # # You can also create simple shell scripts directly inside your
