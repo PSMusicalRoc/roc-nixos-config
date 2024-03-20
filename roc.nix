@@ -54,6 +54,7 @@
     })
     # davinci-resolve
     prismlauncher
+    spotube
 
 
     # # You can also create simple shell scripts directly inside your
